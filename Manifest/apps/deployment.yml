@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: welcome-services-container
-          image: nvlannasik/welcome:latest
+          image: nvlannasik/welcome:release-0.0.2
           ports:
             - containerPort: 5000
           resources:
