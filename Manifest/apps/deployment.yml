@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: welcome-deployment
+  namespace: be-welcome-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: welcome-service
+  template:
+    metadata:
+      name: welcome-service
+      labels:
+        app: welcome-service
+    spec:
+      containers:
+        - name: welcome-services-container
+          image: nvlannasik/welcome-service:latest
+          ports:
+            - containerPort: 5000
+          resources:
+            limits:
+              memory: 256Mi
+              cpu: 200m
+            requests:
+              memory: 128Mi
+              cpu: 100m
+          envFrom:
+            - configMapRef:
+                name: welcome-configmap
+          env:
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: welcome-services-secret
+                  key: API_KEY
+            - name: DB_MONGO_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-welcome-service-secret
+                  key: DB_MONGO_USER
+            - name: DB_MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-welcome-service-secret
+                  key: DB_MONGO_PASSWORD

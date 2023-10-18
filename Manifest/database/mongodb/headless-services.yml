@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: database
+  name: mongodb-welcome-service-svc
+  labels:
+    name: mongodb-welcome-service-svc
+    app: database
+    role: mongodb-welcome-service
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+  clusterIP: None
+  selector:
+    role: mongodb-welcome-service

@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: welcome-services
+  namespace: argocd
+spec:
+  destination:
+    namespace: be-welcome-service
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: Manifest/apps
+    repoURL: https://github.com/nvlannasik/devops-sltr-test-case.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

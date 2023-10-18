@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: welcome-configmap
+  namespace: be-welcome-service
+data:
+  PORT: "8000"
+  DB_MONGO_HOST: mongodb-welcome-service-svc.database.svc.cluster.local
+  DB_MONGO_PORT: "27017"
+  NODE_ENV: test
