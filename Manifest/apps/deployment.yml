@@ -38,10 +38,10 @@ spec:
             - name: DB_MONGO_USER
               valueFrom:
                 secretKeyRef:
-                  name: mongodb-welcome-service-secret
+                  name: welcome-services-secret
                   key: DB_MONGO_USER
             - name: DB_MONGO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mongodb-welcome-service-secret
+                  name: welcome-services-secret
                   key: DB_MONGO_PASSWORD

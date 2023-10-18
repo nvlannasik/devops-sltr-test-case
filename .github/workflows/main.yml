@@ -37,11 +37,11 @@ jobs:
       - name: Update manifest
         run: |
         NEW_IMAGE="${{ secrets.DOCKERHUB_USERNAME }}/welcome:${{ github.ref_name }}"
-        sed -i "s|image:.*|image: $NEW_IMAGE|g" ./Manifest/apps/deployment.yaml
+        sed -i "s|image: .*|image: $NEW_IMAGE|" ./Manifest/apps/deployment.yml
         git config --global user.email "annasikn@yahoo.com"
         git config --global user.name "nvlannasik"
         git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/nvlannasik/devops-sltr-test-case.git
-        git add ./Manifest/apps/deployment.yaml
+        git add ./Manifest/apps/deployment.yml
         git commit -m "Update deployment image to $NEW_IMAGE"
         git push origin HEAD:master
 
