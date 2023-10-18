@@ -12,7 +12,7 @@ spec:
   tls:
     - hosts:
         - welcome.annasik.my.id
-      secretName: order-tls
+      secretName: welcome-tls
   rules:
     - host: welcome.annasik.my.id
       http:
