@@ -13,8 +13,5 @@ spec:
     repoURL: https://github.com/nvlannasik/devops-sltr-test-case.git
     targetRevision: HEAD
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
     syncOptions:
       - CreateNamespace=true
