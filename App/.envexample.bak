@@ -1,0 +1,15 @@
+# ------------------------------------------------------------------
+# General
+# ------------------------------------------------------------------
+
+PORT= <PORT>
+NODE_ENV= <prod | dev | test>
+API_KEY= <API_KEY>
+
+# ------------------------------------------------------------------
+# MongoDB
+# ------------------------------------------------------------------
+DB_MONGO_USER= <username to mongo>
+DB_MONGO_PASSWORD= <password to mongo>
+DB_MONGO_HOST= <url to mongo>
+DB_MONGO_PORT= <port to mongo>

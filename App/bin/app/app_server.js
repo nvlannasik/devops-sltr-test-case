@@ -27,7 +27,7 @@ class AppServer {
   }
 
   routes() {
-    this.app.use("/welcoming", routerWelcoming);
+    this.app.use("/welcome", routerWelcoming);
     this.app.use("/v1/crud", routerCrud);
   }
 
